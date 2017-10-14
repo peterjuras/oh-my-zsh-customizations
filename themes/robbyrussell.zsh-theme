@@ -1,5 +1,5 @@
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-PROMPT='${ret_status} ${_user_host}%{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+PROMPT='${ret_status} $(_user_host)%{$fg_bold[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
@@ -14,6 +14,6 @@ function _user_host() {
   fi
 
   if [[ -n $me ]]; then
-    echo "%{$fg[yellow]%}$me%{$reset_color%}:"
+    echo "%{$reset_color%}%{$fg[yellow]%}$me%{$reset_color%}:"
   fi
 }
